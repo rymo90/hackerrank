@@ -15,4 +15,4 @@ dominater3= reduce((lambda x,y: x*y), BRR)
 pA= dominater1/product
 pB = dominater2/product
 pC = dominater3/product
-print((pA+pB+pC) == 17/42)
+print(pA+pB+pC)
