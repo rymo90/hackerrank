@@ -5,24 +5,31 @@ class Node:
 
 
 class Solution:
-    def display(self, head):
-        current = head
+    def __init__(self):
+        self.head = None
+
+    def display(self):
+        current = self.head
         while current:
-            print(current.data, end=' ')
+            print(current.data, end=" ")
+
             current = current.next
 
-    def insert(self, head, data):
+    def insert(self, data):
         nyNode = Node(data)
-        if head == None:
-            head = nyNode
+        if self.head == None:
+            self.head = nyNode
         else:
-            head.Node.next = nyNode
+            current = self.head
+            while(current.next is not None):
+                current = current.next
+            current.next = nyNode
+        return self.head
 
 
 mylist = Solution()
 T = int(input())
-head = None
 for i in range(T):
     data = int(input())
-    head = mylist.insert(head, data)
-mylist.display(head)
+    mylist.insert(data)
+mylist.display()
